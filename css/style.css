@@ -1,9 +1,24 @@
+/* reset */
+p {
+    margin-bottom: 0;
+}
+
+
+/* style */
 .container {
     max-width: 800px;
+    height: 100vh;
 }
 
 .counter-display {
-    max-width: 800px;
-    height: 96px;
-    border: 1px solid #000;
+    width: 800px;
+    height: 100px;
+}
+
+.counter-number {
+    font-size: 96px;
+}
+
+.counter-button {
+    padding: 10px 100px;
 }
