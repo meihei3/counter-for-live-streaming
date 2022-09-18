@@ -1,0 +1,9 @@
+.container {
+    max-width: 800px;
+}
+
+.counter-display {
+    max-width: 800px;
+    height: 96px;
+    border: 1px solid #000;
+}
