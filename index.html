@@ -2,14 +2,20 @@
 <html lang="ja">
 
 <head>
-    <title>counter</title>
+    <title>Counter for live-streaming</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/wing.min.css" />
     <link rel="stylesheet" href="css/dist.css" />
+    <meta name="keywords" content="カウンター,配信,OBS,クロマキー,透過" >
+    <meta name="description" content="配信者向けのシンプルな手動カウンターWebアプリです。OBSでクロマキーフィルタを使用する事で透過させて使うことが出来ます。">
 </head>
 
 <body>
     <div class="container center flex">
+        <div class="header">
+            <h1 class="header__text">COUNTER FOR LIVE-STREAMING</h1>
+        </div>
         <div id="count-display" class="counter-display center flex border-gray">
             <p id="count-number" class="counter-number color-gray"></p>
         </div>
@@ -18,10 +24,12 @@
             <button id="count-down" class='col outline counter-button'>Count Down</button>
         </div>
         <div class="row">
-            <div class="col border-black options">Background Color
+            <div class="col border-black options">
+                <label for="bg-color-picker">Background Color</label>
                 <input type="color" id="bg-color-picker" value="#00ff00" class="color-picker"/>
             </div>
-            <div class="col border-black options">Text Color
+            <div class="col border-black options">
+                <label for="text-color-picker">Text Color</label>
                 <input type="color" id="text-color-picker" value="#6f4f40" class="color-picker"/>
             </div>
             <div class="col border-black options">Font
@@ -33,10 +41,8 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col border-black">Use zero padding</div>
-            <div class="col border-black"></div>
-            <div class="col border-black"></div>
+        <div class="footer">
+            <p>Copyright © <a href="https://twitter.com/app1e_s">meihei</a>. All Rights Reserved.</p>
         </div>
     </div>
     <script src="scripts/main.js"></script>
