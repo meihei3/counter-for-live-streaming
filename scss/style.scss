@@ -7,16 +7,19 @@ p {
 @font-face {
     font-family: "Noto Sans JP Bold";
     src: url('../font/NotoSansJP-Bold.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans JP Ligth";
     src: url('../font/NotoSansJP-Light.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Sans JP Regular";
     src: url('../font/NotoSansJP-Regular.otf');
+    font-display: swap;
 }
 
 /* style */
