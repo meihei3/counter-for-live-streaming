@@ -32,10 +32,30 @@ const count_down = () => {
 
 const bg_color_change = () => {
   counter_display.style.backgroundColor = color_picker_bg.value;
+  localStorage.setItem("bg_color", color_picker_bg.value);
 };
 
 const text_color_change = () => {
   counter_display_number.style.color = color_picker_text.value;
+  localStorage.setItem("text_color", color_picker_text.value);
+};
+
+const init_color = () => {
+  const b = localStorage.getItem("bg_color");
+  if (b === null) {
+    counter_display.style.backgroundColor = color_picker_bg.value;
+  } else {
+    counter_display.style.backgroundColor = b;
+    color_picker_bg.value = b;
+  }
+
+  const t = localStorage.getItem("text_color");
+  if (t === null) {
+    counter_display_number.style.color = color_picker_text.value;
+  } else {
+    counter_display_number.style.color = t;
+    color_picker_text.value = t;
+  }
 };
 
 const font_change = () => {
@@ -43,25 +63,38 @@ const font_change = () => {
     case "Noto Sans JP Bold":
       counter_display_number.style.fontFamily =
         '"Noto Sans JP Bold", sans-serif';
+      localStorage.setItem("font", font_selector.value);
       break;
     case "Noto Sans JP Regular":
       counter_display_number.style.fontFamily =
         '"Noto Sans JP Regular", sans-serif';
+      localStorage.setItem("font", font_selector.value);
       break;
     case "Noto Sans JP Ligth":
       counter_display_number.style.fontFamily =
         '"Noto Sans JP Ligth", sans-serif';
+      localStorage.setItem("font", font_selector.value);
       break;
     default:
       counter_display_number.style.fontFamily = "";
+      localStorage.removeItem("font");
       break;
   }
 };
 
+const init_font = () => {
+  const f = localStorage.getItem("font");
+  if (f !== null) {
+    font_selector.value = f;
+    font_change();
+  }
+
+}
+
 const init = () => {
   update_display();
-  bg_color_change();
-  text_color_change();
+  init_color();
+  init_font();
 };
 
 count_up_button.addEventListener("click", count_up);
