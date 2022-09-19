@@ -48,10 +48,14 @@ p {
 }
 
 .options {
-    display: flex;
-    align-items: center;
-    height: 45px;
-    padding: 10px 10px;
+    margin-bottom: 30px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 45px;
+        padding: 10px 10px;
+    }
 }
 
 .color-picker {
@@ -80,4 +84,17 @@ p {
 .footer {
     position: absolute;
     bottom: 0;
+}
+
+.site-description {
+    padding: 10px;
+    width: 100%;
+    color: #363636;
+    background-color: #f4ffe4;
+
+    &__title {
+        font-weight: 300;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
 }
