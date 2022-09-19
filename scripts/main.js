@@ -88,8 +88,7 @@ const init_font = () => {
     font_selector.value = f;
     font_change();
   }
-
-}
+};
 
 const init = () => {
   update_display();
