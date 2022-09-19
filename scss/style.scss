@@ -3,6 +3,21 @@ p {
     margin-bottom: 0;
 }
 
+/* font */
+@font-face {
+    font-family: "Noto Sans JP Bold";
+    src: url('../font/NotoSansJP-Bold.otf');
+}
+
+@font-face {
+    font-family: "Noto Sans JP Ligth";
+    src: url('../font/NotoSansJP-Light.otf');
+}
+
+@font-face {
+    font-family: "Noto Sans JP Regular";
+    src: url('../font/NotoSansJP-Regular.otf');
+}
 
 /* style */
 .container {
@@ -12,7 +27,7 @@ p {
 
 .counter-display {
     width: 800px;
-    height: 100px;
+    height: 120px;
     margin-bottom: 20px;
 }
 
@@ -20,10 +35,35 @@ p {
     font-size: 96px;
 }
 
-.counter-button {
+.col {
     margin-left: 10px;
 
     &:first-child {
         margin-left: 0;
     }
+}
+
+.main-buttons {
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding: 10px 10px;
+}
+
+.color-picker {
+    background-color: #fff;
+    margin-left: 5px;
+}
+
+.font-selector {
+    background-color: #fff;
+    padding: 5px;
+    height: auto;
+    width: auto;
+    margin-bottom: 0;
+    margin-left: 5px;
 }

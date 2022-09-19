@@ -13,13 +13,30 @@
         <div id="count-display" class="counter-display center flex border-gray">
             <p id="count-number" class="counter-number color-gray"></p>
         </div>
-        <div class="row">
+        <div class="row main-buttons">
             <button id="count-up" class='col counter-button'>Count Up</button>
             <button id="count-down" class='col outline counter-button'>Count Down</button>
         </div>
         <div class="row">
-            <div class="col">Background Color<input type="color" id="bg-color-picker" value="#00ff00"/></div>
-            <div class="col">Text Color<input type="color" id="text-color-picker" value="#ffa500"/></div>
+            <div class="col border-black options">Background Color
+                <input type="color" id="bg-color-picker" value="#00ff00" class="color-picker"/>
+            </div>
+            <div class="col border-black options">Text Color
+                <input type="color" id="text-color-picker" value="#6f4f40" class="color-picker"/>
+            </div>
+            <div class="col border-black options">Font
+                <select id="font-selector" class="font-selector">
+                    <option value="default">default</option>
+                    <option value="Noto Sans JP Regular">Noto Sans JP Regular</option>
+                    <option value="Noto Sans JP Bold">Noto Sans JP Bold</option>
+                    <option value="Noto Sans JP Ligth">Noto Sans JP Ligth</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border-black">Use zero padding</div>
+            <div class="col border-black"></div>
+            <div class="col border-black"></div>
         </div>
     </div>
     <script src="scripts/main.js"></script>
