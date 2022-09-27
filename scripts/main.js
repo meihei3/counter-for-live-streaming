@@ -61,22 +61,23 @@ const init_color = () => {
 const font_change = () => {
   switch (font_selector.value) {
     case "Noto Sans JP Bold":
-      counter_display_number.style.fontFamily =
-        '"Noto Sans JP Bold", sans-serif';
+      counter_display_number.style.fontFamily = '"Noto Sans JP", sans-serif';
+      counter_display_number.style.fontWeight = 700;
       localStorage.setItem("font", font_selector.value);
       break;
     case "Noto Sans JP Regular":
-      counter_display_number.style.fontFamily =
-        '"Noto Sans JP Regular", sans-serif';
+      counter_display_number.style.fontFamily = '"Noto Sans JP", sans-serif';
+      counter_display_number.style.fontWeight = 400;
       localStorage.setItem("font", font_selector.value);
       break;
     case "Noto Sans JP Ligth":
-      counter_display_number.style.fontFamily =
-        '"Noto Sans JP Ligth", sans-serif';
+      counter_display_number.style.fontFamily = '"Noto Sans JP", sans-serif';
+      counter_display_number.style.fontWeight = 300;
       localStorage.setItem("font", font_selector.value);
       break;
     default:
       counter_display_number.style.fontFamily = "";
+      counter_display_number.style.fontWeight = "";
       localStorage.removeItem("font");
       break;
   }
