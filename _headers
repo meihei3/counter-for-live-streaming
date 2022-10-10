@@ -1,23 +1,11 @@
 /*
+  X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-  X-Content-Type-Options: nosniff
   Content-Security-Policy: default-src 'none'; style-src 'self' fonts.googleapis.com; script-src 'strict-dynamic' 'nonce-NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c'; font-src 'self' fonts.googleapis.com fonts.gstatic.com; img-src 'self'; connect-src 'self' *.google-analytics.com;
 
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-
-/**/*.js
+/static/*
   Cache-Control: public, max-age=31536000, immutable
-
-/**/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/**/*.otf
-  Cache-Control: public, max-age=31536000, immutable
-
-/**/*.png
-  Cache-Control: public, max-age=31536000, immutable
-
-/**/*.ico
-  Cache-Control: public, max-age=31536000, immutable
+  ! X-Frame-Options
+  ! X-XSS-Protection
+  ! Content-Security-Policy
