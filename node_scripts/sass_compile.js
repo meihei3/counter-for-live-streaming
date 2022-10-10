@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require("fs");
 
 const src_path = path.join(__dirname, '../scss/style.scss');
-const dist_path = path.join(__dirname, '../css/dist.css');
+const dist_path = path.join(__dirname, '../static/css/dist.css');
 
 const result = sass.compile(src_path,  {style: "compressed"});
 
