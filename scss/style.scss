@@ -57,8 +57,7 @@ p {
 }
 
 .header {
-    position: absolute;
-    top: 5px;
+    margin: 5px 0 50px;
 
     &__text {
         font-weight: 200;
@@ -66,8 +65,7 @@ p {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    margin-bottom: 5px;
 }
 
 .site-description {
@@ -75,6 +73,7 @@ p {
     width: 100%;
     color: #363636;
     background-color: #f4ffe4;
+    margin-bottom: 30px;
 
     &__title {
         font-weight: 300;
