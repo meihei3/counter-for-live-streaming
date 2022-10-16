@@ -7,6 +7,18 @@ p {
 .container {
     max-width: 800px;
     height: 100vh;
+
+    @media screen and (max-width: 1024px) {
+        width: 90%;
+    }
+}
+
+.spbr {
+    display:none;
+
+    @media screen and (max-width: 1024px) {
+        display:inline;
+    }
 }
 
 .counter-display {
