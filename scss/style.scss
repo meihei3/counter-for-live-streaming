@@ -8,16 +8,16 @@ p {
     max-width: 800px;
     height: 100vh;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 768px) {
         width: 90%;
     }
 }
 
 .spbr {
-    display:none;
+    display: none;
 
-    @media screen and (max-width: 1024px) {
-        display:inline;
+    @media screen and (max-width: 768px) {
+        display: inline;
     }
 }
 
@@ -34,7 +34,7 @@ p {
 .col {
     margin-left: 10px;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 768px) {
         margin-left: 0;
     }
 
@@ -75,7 +75,7 @@ p {
 .header {
     margin: 15px 0 50px;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 768px) {
         margin: 10px 0 20px;
     }
 
@@ -84,7 +84,7 @@ p {
         font-weight: 200;
         font-size: 56px;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 768px) {
             line-height: 0.9;
             font-size: 42px;
             margin-bottom: 0;
