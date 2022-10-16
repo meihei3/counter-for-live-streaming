@@ -73,14 +73,22 @@ p {
 }
 
 .header {
-    margin: 5px 0 50px;
+    margin: 15px 0 50px;
 
     @media screen and (max-width: 1024px) {
-        margin: 5px 0 20px;
+        margin: 10px 0 20px;
     }
 
     &__text {
+        font-family: 'Josefin Sans', sans-serif;
         font-weight: 200;
+        font-size: 56px;
+
+        @media screen and (max-width: 1024px) {
+            line-height: 0.9;
+            font-size: 42px;
+            margin-bottom: 0;
+        }
     }
 }
 
