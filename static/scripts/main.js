@@ -36,7 +36,7 @@ const bg_color_change = () => {
 };
 
 const text_color_change = () => {
-  counter_display_number.style.color = color_picker_text.value;
+  counter_display_number.style.fill = color_picker_text.value;
   localStorage.setItem("text_color", color_picker_text.value);
 };
 
@@ -51,9 +51,9 @@ const init_color = () => {
 
   const t = localStorage.getItem("text_color");
   if (t === null) {
-    counter_display_number.style.color = color_picker_text.value;
+    counter_display_number.style.fill = color_picker_text.value;
   } else {
-    counter_display_number.style.color = t;
+    counter_display_number.style.fill = t;
     color_picker_text.value = t;
   }
 };
