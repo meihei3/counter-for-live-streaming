@@ -11,6 +11,7 @@ const count_up_button = document.getElementById("count-up");
 const count_down_button = document.getElementById("count-down");
 const color_picker_bg = document.getElementById("bg-color-picker");
 const color_picker_text = document.getElementById("text-color-picker");
+const use_border_checkbox = document.getElementById("use-border-checkbox");
 const font_selector = document.getElementById("font-selector");
 
 const update_display = () => {
@@ -83,6 +84,18 @@ const font_change = () => {
   }
 };
 
+const use_white_border = () => {
+  if (use_border_checkbox.checked) {
+    if (!counter_display_number.classList.contains('number__stroke')) {
+      counter_display_number.classList.add('counter-number__stroke');
+    }
+  } else {
+    if (counter_display_number.classList.contains('counter-number__stroke')) {
+      counter_display_number.classList.remove('counter-number__stroke');
+    }
+  }
+}
+
 const init_font = () => {
   const f = localStorage.getItem("font");
   if (f !== null) {
@@ -102,4 +115,5 @@ count_down_button.addEventListener("click", count_down);
 color_picker_bg.addEventListener("change", bg_color_change);
 color_picker_text.addEventListener("change", text_color_change);
 font_selector.addEventListener("change", font_change);
+use_border_checkbox.addEventListener("change", use_white_border);
 window.addEventListener("DOMContentLoaded", init);
