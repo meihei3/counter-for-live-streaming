@@ -29,6 +29,14 @@ p {
 
 .counter-number {
     font-size: 96px;
+
+    &__stroke {
+        stroke: #fff;
+        stroke-width: 16px;
+        paint-order: stroke;
+        stroke-linejoin: round;
+        letter-spacing: 12px;
+    }
 }
 
 .col {
@@ -69,6 +77,12 @@ p {
     height: auto;
     width: auto;
     margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.use-border-checkbox {
+    height: 21px;
+    width: 21px;
     margin-left: 5px;
 }
 

@@ -8,7 +8,7 @@
     <meta http-equiv="referrer-policy" content="strict-origin-when-cross-origin">
     <link rel="shortcut icon" href="/static/img/favicon.ico">
     <link rel="stylesheet" href="/static/css/wing.min.css" />
-    <link rel="stylesheet" href="/static/css/dist.css?v2.0.0" />
+    <link rel="stylesheet" href="/static/css/dist.css?v2.1.0" />
     <meta name="keywords" content="カウンター,配信,OBS,クロマキー,透過">
     <meta name="description" content="配信者向けのシンプルな手動カウンターWebアプリです。OBSでクロマキーフィルタを使用する事で透過させて使うことが出来ます。">
     <meta property="og:title" content="Counter for live-streaming">
@@ -42,7 +42,9 @@
             <h1 class="header__text">Counter For <br class="spbr"/>Live-streaming</h1>
         </div>
         <div id="count-display" class="counter-display center flex border-gray">
-            <p id="count-number" class="counter-number"></p>
+            <svg width="100%" height="100%">
+                <text id="count-number" class="counter-number" x="50%" y="50%" text-anchor="middle" dominant-baseline="central"></text>
+            </svg>
         </div>
         <div class="row main-buttons">
             <button id="count-up" class='col counter-button'>Count Up</button>
@@ -66,6 +68,12 @@
                 </select>
             </div>
         </div>
+        <div class="row options">
+            <div class="col border-black options__item">
+                <label for="use-border">White border</label>
+                <input type="checkbox" id="use-border-checkbox" class="use-border-checkbox" />
+            </div>
+        </div>
         <div class="site-description background-ligth-gray">
             <h2 class="site-description__title">About This</h2>
             <p>配信者向けのシンプルな手動カウンターWebアプリです。OBSでクロマキーフィルタを使用する事で透過させて使うことが出来ます。</p>
@@ -81,7 +89,7 @@
             <p>Copyright © 2022 <a href="https://twitter.com/app1e_s">meihei</a>.</p>
         </div>
     </div>
-    <script nonce="NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c" src="/static/scripts/main.js?v2.0.0"></script>
+    <script nonce="NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c" src="/static/scripts/main.js?v2.1.0"></script>
 </body>
 
 </html>
