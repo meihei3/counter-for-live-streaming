@@ -7,9 +7,11 @@ p {
 .container {
     max-width: 800px;
     height: 100vh;
+    padding-top: 15px;
 
     @media screen and (max-width: 768px) {
         width: 90%;
+        padding-top: 10px;
     }
 }
 
@@ -87,10 +89,10 @@ p {
 }
 
 .header {
-    margin: 15px 0 50px;
+    margin: 0 0 50px;
 
     @media screen and (max-width: 768px) {
-        margin: 10px 0 20px;
+        margin: 0 0 20px;
     }
 
     &__text {
@@ -108,7 +110,10 @@ p {
 }
 
 .footer {
-    margin-bottom: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
 }
 
 .site-description {
