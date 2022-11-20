@@ -1,18 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import { Script } from "gatsby"
+import { Display } from "../components/Display"
 
 export default function Home() {
+    const [bgColor, setBgColor] = useState("#00ff00");
+    const [textColor, setTextColor] = useState("#6f4f40");
+
   return (
     <>
     <div class="container">
       <div class="header flex center">
           <h1 class="header__text">Counter For <br class="spbr"/>Live-streaming</h1>
       </div>
-      <div id="count-display" class="counter-display center flex border-gray">
-          <svg width="100%" height="100%">
-              <text id="count-number" class="counter-number" x="50%" y="50%" text-anchor="middle" dominant-baseline="central"></text>
-          </svg>
-      </div>
+      <Display text='00000' />
       <div class="row main-buttons">
           <button id="count-up" class='col counter-button'>Count Up</button>
           <button id="count-down" class='col outline counter-button'>Count Down</button>
@@ -20,11 +20,11 @@ export default function Home() {
       <div class="row options">
           <div class="col border-black options__item">
               <label for="bg-color-picker">Background Color</label>
-              <input type="color" id="bg-color-picker" value="#00ff00" class="color-picker" />
+              <input type="color" id="bg-color-picker" value={bgColor} class="color-picker" onChange={e => setBgColor(e.target.value)} />
           </div>
           <div class="col border-black options__item">
               <label for="text-color-picker">Text Color</label>
-              <input type="color" id="text-color-picker" value="#6f4f40" class="color-picker" />
+              <input type="color" id="text-color-picker" value={textColor} class="color-picker" onChange={e => setTextColor(e.target.value)} />
           </div>
           <div class="col border-black options__item">
               <label for="font-selector">Font</label>
@@ -48,7 +48,7 @@ export default function Home() {
           </p>
       </div>
   </div>
-  <Script src={'/scripts/main.js?v2.3.0'} />
+  <Script src={'/scripts/main.js?v2.3.0'} strategy="idle" />
   </>
   )
 }
