@@ -1,4 +1,5 @@
 import React from "react"
+import { Script } from "gatsby"
 
 export default function About() {
   return (
@@ -77,13 +78,15 @@ export const Head = () => (
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300&family=Noto+Sans+JP:wght@300;400;700&display=swap&text=0123456789Counter For Live-streamig" rel="stylesheet"/>
 
   {/* <!-- Google tag (gtag.js) --> */}
-  {/* <script nonce="NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c" async src="https://www.googletagmanager.com/gtag/js?id=G-NGEYCRYTBJ"></script>
-  <script nonce="NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c">
+  <Script nonce="NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c" strategy="off-main-thread" async src="https://www.googletagmanager.com/gtag/js?id=G-NGEYCRYTBJ"></Script>
+  <Script nonce="NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c" strategy="off-main-thread">
+    {`
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
       gtag('config', 'G-NGEYCRYTBJ');
-  </script> */}
+  `}
+  </Script>
   </>
 )
