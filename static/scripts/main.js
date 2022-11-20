@@ -5,12 +5,9 @@ const COUNTER_MIN = 0
 const COUNTER_MAX = 100000
 const zero_padding = Math.log10(COUNTER_MAX)
 
-const counter_display = document.getElementById("count-display")
 const counter_display_number = document.getElementById("count-number")
 const count_up_button = document.getElementById("count-up")
 const count_down_button = document.getElementById("count-down")
-const color_picker_bg = document.getElementById("bg-color-picker")
-const color_picker_text = document.getElementById("text-color-picker")
 const use_border_checkbox = document.getElementById("use-border-checkbox")
 const font_selector = document.getElementById("font-selector")
 
@@ -26,34 +23,6 @@ const count_up = () => {
 const count_down = () => {
   count -= count > COUNTER_MIN ? 1 : 0
   update_display()
-}
-
-const bg_color_change = () => {
-  counter_display.style.backgroundColor = color_picker_bg.value
-  localStorage.setItem("bg_color", color_picker_bg.value)
-}
-
-const text_color_change = () => {
-  counter_display_number.style.fill = color_picker_text.value
-  localStorage.setItem("text_color", color_picker_text.value)
-}
-
-const init_color = () => {
-  const b = localStorage.getItem("bg_color")
-  if (b === null) {
-    counter_display.style.backgroundColor = color_picker_bg.value
-  } else {
-    counter_display.style.backgroundColor = b
-    color_picker_bg.value = b
-  }
-
-  const t = localStorage.getItem("text_color")
-  if (t === null) {
-    counter_display_number.style.fill = color_picker_text.value
-  } else {
-    counter_display_number.style.fill = t
-    color_picker_text.value = t
-  }
 }
 
 const font_change = () => {
@@ -103,14 +72,11 @@ const init_font = () => {
 
 const init = () => {
   update_display()
-  init_color()
   init_font()
 }
 
 count_up_button.addEventListener("click", count_up)
 count_down_button.addEventListener("click", count_down)
-color_picker_bg.addEventListener("change", bg_color_change)
-color_picker_text.addEventListener("change", text_color_change)
 font_selector.addEventListener("change", font_change)
 use_border_checkbox.addEventListener("change", use_white_border)
 window.addEventListener("DOMContentLoaded", init)

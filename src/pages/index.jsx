@@ -12,7 +12,7 @@ export default function Home() {
       <div class="header flex center">
           <h1 class="header__text">Counter For <br class="spbr"/>Live-streaming</h1>
       </div>
-      <Display text='00000' />
+      <Display text='00000' bgColor={bgColor} textColor={textColor} />
       <div class="row main-buttons">
           <button id="count-up" class='col counter-button'>Count Up</button>
           <button id="count-down" class='col outline counter-button'>Count Down</button>

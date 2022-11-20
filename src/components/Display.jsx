@@ -1,12 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Display = (props) => {
     return (
-    <div id="count-display" class="counter-display center flex border-gray">
+    <DisplayBack id="count-display" bgColor={props.bgColor} className="center flex border-gray">
         <svg width="100%" height="100%">
-            <text id="count-number" class="counter-number" x="50%" y="50%" text-anchor="middle" dominant-baseline="central">{props.text}</text>
+            <DisplayText id="count-number" textColor={props.textColor} className="counter-number" x="50%" y="50%" textAnchor="middle" dominantBaseline="central">{props.text}</DisplayText>
         </svg>
-    </div>
+    </DisplayBack>
     )
 };
+
+const DisplayBack = styled.div`
+    background-color: ${(props)=>props.bgColor};
+    width: 100%;
+    height: 140px;
+    margin-bottom: 20px;
+`
+
+const DisplayText = styled.text`
+    fill: ${(props)=>props.textColor};
+`
+
 export { Display };
