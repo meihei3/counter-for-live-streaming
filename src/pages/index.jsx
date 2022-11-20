@@ -3,9 +3,13 @@ import { Script } from "gatsby"
 import { Display } from "../components/Display"
 
 export default function Home() {
-    const [bgColor, setBgColor] = useState(() => localStorage.getItem("bg_color") || "#00ff00");
-    const [textColor, setTextColor] = useState(() => localStorage.getItem("text_color") || "#6f4f40");
+    const [bgColor, setBgColor] = useState('');
+    const [textColor, setTextColor] = useState('');
 
+    useEffect(() => {
+        setBgColor(localStorage.getItem("bg_color") || "#00ff00")
+        setTextColor(localStorage.getItem("text_color") || "#6f4f40")
+    }, [])
     useEffect(() => localStorage.setItem('bg_color', bgColor), [bgColor])
     useEffect(() => localStorage.setItem('text_color', textColor), [textColor])
 
