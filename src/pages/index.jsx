@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Script } from "gatsby"
 import { Display } from "../components/Display"
-
-const saveBgColor = col => localStorage.setItem('bg_color', col)
-const saveTextColor = col => localStorage.setItem('text_color', col)
 
 export default function Home() {
     const [bgColor, setBgColor] = useState(() => localStorage.getItem("bg_color") || "#00ff00");
     const [textColor, setTextColor] = useState(() => localStorage.getItem("text_color") || "#6f4f40");
+
+    useEffect(() => localStorage.setItem('bg_color', bgColor), [bgColor])
+    useEffect(() => localStorage.setItem('text_color', textColor), [textColor])
 
   return (
     <>
@@ -23,11 +23,11 @@ export default function Home() {
       <div class="row options">
           <div class="col border-black options__item">
               <label for="bg-color-picker">Background Color</label>
-              <input type="color" id="bg-color-picker" value={bgColor} class="color-picker" onChange={e => {saveBgColor(e.target.value);setBgColor(e.target.value)}} />
+              <input type="color" id="bg-color-picker" value={bgColor} class="color-picker" onChange={e => setBgColor(e.target.value)} />
           </div>
           <div class="col border-black options__item">
               <label for="text-color-picker">Text Color</label>
-              <input type="color" id="text-color-picker" value={textColor} class="color-picker" onChange={e => {saveTextColor(e.target.value);setTextColor(e.target.value)}} />
+              <input type="color" id="text-color-picker" value={textColor} class="color-picker" onChange={e => setTextColor(e.target.value)} />
           </div>
           <div class="col border-black options__item">
               <label for="font-selector">Font</label>
