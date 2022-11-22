@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { Script } from "gatsby"
 import { Display } from "../components/Display"
+import { countNumberToText, countUp, countDown } from "../util/Counter"
 
 export default function Home() {
+  const [count, setCount] = useState(0)
   const [bgColor, setBgColor] = useState("")
   const [textColor, setTextColor] = useState("")
 
@@ -22,12 +24,24 @@ export default function Home() {
             Live-streaming
           </h1>
         </div>
-        <Display text="00000" bgColor={bgColor} textColor={textColor} />
+        <Display
+          numberText={countNumberToText(count)}
+          bgColor={bgColor}
+          textColor={textColor}
+        />
         <div class="row main-buttons">
-          <button id="count-up" class="col counter-button">
+          <button
+            id="count-up"
+            class="col counter-button"
+            onClick={_ => setCount(countUp(count))}
+          >
             Count Up
           </button>
-          <button id="count-down" class="col outline counter-button">
+          <button
+            id="count-down"
+            class="col outline counter-button"
+            onClick={_ => setCount(countDown(count))}
+          >
             Count Down
           </button>
         </div>

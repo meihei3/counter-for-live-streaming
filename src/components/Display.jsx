@@ -18,7 +18,7 @@ const Display = props => {
           textAnchor="middle"
           dominantBaseline="central"
         >
-          {props.text}
+          {props.numberText}
         </DisplayText>
       </svg>
     </DisplayBack>
