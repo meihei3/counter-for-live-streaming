@@ -7,13 +7,29 @@ export default function Home() {
   const [count, setCount] = useState(0)
   const [bgColor, setBgColor] = useState("")
   const [textColor, setTextColor] = useState("")
+  const [fontSettings, setFontSettings] = useState({ family: "", weight: 400, useDefault: true, value: "" })
 
   useEffect(() => {
     setBgColor(localStorage.getItem("bg_color") || "#00ff00")
     setTextColor(localStorage.getItem("text_color") || "#6f4f40")
+    setFontSettings(selectFont(localStorage.getItem("font")) || "default")
   }, [])
   useEffect(() => localStorage.setItem("bg_color", bgColor), [bgColor])
   useEffect(() => localStorage.setItem("text_color", textColor), [textColor])
+  useEffect(() => localStorage.setItem("font", fontSettings.value), [fontSettings])
+
+  const selectFont = (val) => {
+    switch (val) {
+      case "Noto Sans JP Bold":
+        return { family: '"Noto Sans JP", sans-serif', weight: 700, useDefault: false, value: "Noto Sans JP Bold" }
+      case "Noto Sans JP Regular":
+        return { family: '"Noto Sans JP", sans-serif', weight: 400, useDefault: false, value: "Noto Sans JP Regular" }
+      case "Noto Sans JP Ligth":
+        return { family: '"Noto Sans JP", sans-serif', weight: 300, useDefault: false, value: "Noto Sans JP Ligth" }
+      default:
+        return { family: "", weight: 400, useDefault: true, value: "" }
+    }
+  }
 
   return (
     <>
@@ -28,6 +44,7 @@ export default function Home() {
           numberText={countNumberToText(count)}
           bgColor={bgColor}
           textColor={textColor}
+          fontSettings={fontSettings}
         />
         <div class="row main-buttons">
           <button
@@ -68,11 +85,11 @@ export default function Home() {
           </div>
           <div class="col border-black options__item">
             <label for="font-selector">Font</label>
-            <select id="font-selector" class="font-selector">
-              <option value="default">default</option>
-              <option value="Noto Sans JP Regular">Noto Sans JP Regular</option>
-              <option value="Noto Sans JP Bold">Noto Sans JP Bold</option>
-              <option value="Noto Sans JP Ligth">Noto Sans JP Ligth</option>
+            <select id="font-selector" class="font-selector" onChange={e => setFontSettings(selectFont(e.target.value))}>
+              <option value="default" selected={fontSettings.value === "default"}>default</option>
+              <option value="Noto Sans JP Regular" selected={fontSettings.value === "Noto Sans JP Regular"}>Noto Sans JP Regular</option>
+              <option value="Noto Sans JP Bold" selected={fontSettings.value === "Noto Sans JP Bold"}>Noto Sans JP Bold</option>
+              <option value="Noto Sans JP Ligth" selected={fontSettings.value === "Noto Sans JP Ligth"}>Noto Sans JP Ligth</option>
             </select>
           </div>
         </div>

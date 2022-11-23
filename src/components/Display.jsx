@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 
 const Display = props => {
   return (
@@ -12,6 +12,7 @@ const Display = props => {
         <DisplayText
           id="count-number"
           textColor={props.textColor}
+          fontSettings={props.fontSettings}
           className="counter-number"
           x="50%"
           y="50%"
@@ -34,6 +35,10 @@ const DisplayBack = styled.div`
 
 const DisplayText = styled.text`
   fill: ${props => props.textColor};
+  ${props => props.fontSettings.useDefault ? css`` : css`
+  font-family: ${props => props.fontSettings.family};
+  font-weight: ${props => props.fontSettings.weight};
+  ` }
 `
 
 export { Display }
