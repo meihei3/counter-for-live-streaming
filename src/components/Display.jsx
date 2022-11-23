@@ -1,5 +1,5 @@
 import React from "react"
-import styled, {css} from "styled-components"
+import styled, { css } from "styled-components"
 
 const Display = props => {
   return (
@@ -36,17 +36,23 @@ const DisplayBack = styled.div`
 
 const DisplayText = styled.text`
   fill: ${props => props.textColor};
-  ${props => props.fontSettings.useDefault ? css`` : css`
-  font-family: ${props => props.fontSettings.family};
-  font-weight: ${props => props.fontSettings.weight};
-  ` }
-  ${props => props.stroke ? css`
-    stroke: #fff;
-    stroke-width: 16px;
-    paint-order: stroke;
-    stroke-linejoin: round;
-    letter-spacing: 12px;
-  ` : css`` }
+  ${props =>
+    props.fontSettings.useDefault
+      ? css``
+      : css`
+          font-family: ${props => props.fontSettings.family};
+          font-weight: ${props => props.fontSettings.weight};
+        `}
+  ${props =>
+    props.stroke
+      ? css`
+          stroke: #fff;
+          stroke-width: 16px;
+          paint-order: stroke;
+          stroke-linejoin: round;
+          letter-spacing: 12px;
+        `
+      : css``}
 `
 
 export { Display }

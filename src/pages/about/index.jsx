@@ -1,4 +1,5 @@
 import React from "react"
+import { Footer } from "../../components/Footer"
 
 export default function About() {
   return (
@@ -40,12 +41,7 @@ export default function About() {
           ページをご覧ください。
         </p>
       </div>
-      <div class="footer flex center">
-        <p>
-          <a href="/">top</a> | <a href="/about/">about</a> | Copyright © 2022{" "}
-          <a href="https://twitter.com/app1e_s">meihei</a>.
-        </p>
-      </div>
+      <Footer/>
     </div>
   )
 }

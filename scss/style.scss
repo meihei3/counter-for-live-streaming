@@ -25,14 +25,6 @@ p {
 
 .counter-number {
     font-size: 96px;
-
-    &__stroke {
-        stroke: #fff;
-        stroke-width: 16px;
-        paint-order: stroke;
-        stroke-linejoin: round;
-        letter-spacing: 12px;
-    }
 }
 
 .col {
