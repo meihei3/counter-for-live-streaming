@@ -3,17 +3,13 @@ import { Display } from "../components/Display"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { countNumberToText, countUp, countDown } from "../util/Counter"
+import { Fonts, selectFont, getDefaultFont } from "../util/FontSelector"
 
 export default function Home() {
   const [count, setCount] = useState(0)
   const [bgColor, setBgColor] = useState("")
   const [textColor, setTextColor] = useState("")
-  const [fontSettings, setFontSettings] = useState({
-    family: "",
-    weight: 400,
-    useDefault: true,
-    value: "",
-  })
+  const [fontSettings, setFontSettings] = useState(getDefaultFont())
   const [stroke, setStroke] = useState(false)
 
   useEffect(() => {
@@ -27,34 +23,6 @@ export default function Home() {
     () => localStorage.setItem("font", fontSettings.value),
     [fontSettings]
   )
-
-  const selectFont = val => {
-    switch (val) {
-      case "Noto Sans JP Bold":
-        return {
-          family: '"Noto Sans JP", sans-serif',
-          weight: 700,
-          useDefault: false,
-          value: "Noto Sans JP Bold",
-        }
-      case "Noto Sans JP Regular":
-        return {
-          family: '"Noto Sans JP", sans-serif',
-          weight: 400,
-          useDefault: false,
-          value: "Noto Sans JP Regular",
-        }
-      case "Noto Sans JP Ligth":
-        return {
-          family: '"Noto Sans JP", sans-serif',
-          weight: 300,
-          useDefault: false,
-          value: "Noto Sans JP Ligth",
-        }
-      default:
-        return { family: "", weight: 400, useDefault: true, value: "" }
-    }
-  }
 
   return (
     <>
@@ -111,30 +79,14 @@ export default function Home() {
               class="font-selector"
               onChange={e => setFontSettings(selectFont(e.target.value))}
             >
-              <option
-                value="default"
-                selected={fontSettings.value === "default"}
-              >
-                default
-              </option>
-              <option
-                value="Noto Sans JP Regular"
-                selected={fontSettings.value === "Noto Sans JP Regular"}
-              >
-                Noto Sans JP Regular
-              </option>
-              <option
-                value="Noto Sans JP Bold"
-                selected={fontSettings.value === "Noto Sans JP Bold"}
-              >
-                Noto Sans JP Bold
-              </option>
-              <option
-                value="Noto Sans JP Ligth"
-                selected={fontSettings.value === "Noto Sans JP Ligth"}
-              >
-                Noto Sans JP Ligth
-              </option>
+              {Fonts.map((font, _) => (
+                <option
+                  value={font.value}
+                  selected={fontSettings.value === font.value}
+                >
+                  {font.value}
+                </option>
+              ))}
             </select>
           </div>
         </div>

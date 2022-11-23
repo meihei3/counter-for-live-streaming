@@ -1,3 +1,5 @@
+"use strict"
+
 const COUNTER_MIN = 0
 const COUNTER_MAX = 100000
 const zero_padding = Math.log10(COUNTER_MAX)
