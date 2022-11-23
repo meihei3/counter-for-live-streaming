@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import styled from "styled-components"
 import { Display } from "../components/Display"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
@@ -26,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <div class="container">
+      <Container className="container">
         <Header />
         <Display
           numberText={countNumberToText(count)}
@@ -102,9 +103,20 @@ export default function Home() {
           </div>
         </div>
         <Footer />
-      </div>
+      </Container>
     </>
   )
 }
+
+const Container = styled.div`
+  max-width: 800px;
+  height: 100vh;
+  padding-top: 15px;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    padding-top: 10px;
+  }
+`
 
 export { Head } from "../components/Head"
