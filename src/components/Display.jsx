@@ -14,7 +14,6 @@ const Display = props => {
           textColor={props.textColor}
           fontSettings={props.fontSettings}
           stroke={props.stroke}
-          className="counter-number"
           x="50%"
           y="50%"
           textAnchor="middle"
@@ -35,6 +34,7 @@ const DisplayBack = styled.div`
 `
 
 const DisplayText = styled.text`
+  font-size: 96px;
   fill: ${props => props.textColor};
   ${props =>
     props.fontSettings.useDefault

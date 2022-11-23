@@ -41,7 +41,7 @@ export default function About() {
           ページをご覧ください。
         </p>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

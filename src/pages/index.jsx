@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Display } from "../components/Display"
 import { Footer } from "../components/Footer"
+import { Header } from "../components/Header"
 import { countNumberToText, countUp, countDown } from "../util/Counter"
 
 export default function Home() {
@@ -58,12 +59,7 @@ export default function Home() {
   return (
     <>
       <div class="container">
-        <div class="header flex center">
-          <h1 class="header__text">
-            Counter For <br class="spbr" />
-            Live-streaming
-          </h1>
-        </div>
+        <Header />
         <Display
           numberText={countNumberToText(count)}
           bgColor={bgColor}
