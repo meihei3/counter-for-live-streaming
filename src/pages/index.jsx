@@ -113,7 +113,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <Script src={"/scripts/main.js?v2.3.0"} strategy="idle" />
     </>
   )
 }
