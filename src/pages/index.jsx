@@ -8,6 +8,7 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("")
   const [textColor, setTextColor] = useState("")
   const [fontSettings, setFontSettings] = useState({ family: "", weight: 400, useDefault: true, value: "" })
+  const [stroke, setStroke] = useState(false)
 
   useEffect(() => {
     setBgColor(localStorage.getItem("bg_color") || "#00ff00")
@@ -45,6 +46,7 @@ export default function Home() {
           bgColor={bgColor}
           textColor={textColor}
           fontSettings={fontSettings}
+          stroke={stroke}
         />
         <div class="row main-buttons">
           <button
@@ -100,6 +102,7 @@ export default function Home() {
               type="checkbox"
               id="use-border-checkbox"
               class="use-border-checkbox"
+              onChange={e => setStroke(e.target.checked)}
             />
           </div>
         </div>

@@ -13,6 +13,7 @@ const Display = props => {
           id="count-number"
           textColor={props.textColor}
           fontSettings={props.fontSettings}
+          stroke={props.stroke}
           className="counter-number"
           x="50%"
           y="50%"
@@ -39,6 +40,13 @@ const DisplayText = styled.text`
   font-family: ${props => props.fontSettings.family};
   font-weight: ${props => props.fontSettings.weight};
   ` }
+  ${props => props.stroke ? css`
+    stroke: #fff;
+    stroke-width: 16px;
+    paint-order: stroke;
+    stroke-linejoin: round;
+    letter-spacing: 12px;
+  ` : css`` }
 `
 
 export { Display }
