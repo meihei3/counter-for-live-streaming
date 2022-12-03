@@ -10,6 +10,7 @@ export const useSiteMetadata = () => {
           url
           image
           keywords
+          gtag
         }
       }
     }

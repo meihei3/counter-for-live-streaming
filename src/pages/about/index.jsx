@@ -70,6 +70,4 @@ const DescriptionTitle = styled.h2`
   margin-bottom: 5px;
 `
 
-export const Head = () => (
-  <SEO />
-)
+export const Head = () => <SEO />

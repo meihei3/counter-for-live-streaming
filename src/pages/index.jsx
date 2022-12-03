@@ -120,6 +120,4 @@ const Container = styled.div`
   }
 `
 
-export const Head = () => (
-  <SEO />
-)
+export const Head = () => <SEO />

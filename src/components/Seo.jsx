@@ -3,14 +3,23 @@ import { Script } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const SEO = ({ title, description, pathname, children }) => {
-  const { title: defaultTitle, description: defaultDescription, image, siteUrl, keywords } = useSiteMetadata()
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    image,
+    url: siteUrl,
+    keywords,
+    gtag,
+  } = useSiteMetadata()
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
     keywords: keywords,
+    gtag: gtag,
   }
+  const version = "v2.3.0"
 
   return (
     <>
@@ -21,9 +30,9 @@ const SEO = ({ title, description, pathname, children }) => {
         http-equiv="referrer-policy"
         content="strict-origin-when-cross-origin"
       />
-      <link rel="shortcut icon" href={"/img/favicon.ico"} />
+      <link rel="shortcut icon" href={"/img/favicogn.ico"} />
       <link rel="stylesheet" href={"/css/wing.min.css"} />
-      <link rel="stylesheet" href={"/css/dist.css?v2.3.0"} />
+      <link rel="stylesheet" href={"/css/dist.css?" + version} />
       <meta name="keywords" content={seo.keywords} />
       <meta name="description" content={seo.description} />
       <meta property="og:title" content={seo.title} />
@@ -55,7 +64,7 @@ const SEO = ({ title, description, pathname, children }) => {
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
 
-          gtag('config', 'G-NGEYCRYTBJ');
+          gtag('config', '${seo.gtag}');
         `}
       </Script>
       {children}
