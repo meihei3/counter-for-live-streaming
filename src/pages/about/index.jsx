@@ -1,13 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { Header } from "../../components/Header"
-import { Footer } from "../../components/Footer"
 import { SEO } from "../../components/Seo"
+import { Layout } from "../../components/Layout"
 
 export default function About() {
   return (
-    <Container className="container">
-      <Header />
+    <Layout>
       <Description className="background-ligth-gray">
         <DescriptionTitle>About This</DescriptionTitle>
         <p>
@@ -39,21 +37,9 @@ export default function About() {
           ページをご覧ください。
         </p>
       </Description>
-      <Footer />
-    </Container>
+    </Layout>
   )
 }
-
-const Container = styled.div`
-  max-width: 800px;
-  height: 100vh;
-  padding-top: 15px;
-
-  @media screen and (max-width: 768px) {
-    width: 90%;
-    padding-top: 10px;
-  }
-`
 
 const Description = styled.div`
   padding: 10px;

@@ -1,27 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { SEO } from "../components/Seo"
+import { Layout } from "../components/Layout"
 
 export default function NotFound() {
   return (
-    <Container className="container center flex">
+    <Layout className="center flex" includeHeader="false">
       <Title>404 Not Found</Title>
-    </Container>
+    </Layout>
   )
 }
 
 const Title = styled.h1`
   font-weight: 200;
-`
-const Container = styled.div`
-  max-width: 800px;
-  height: 100vh;
-  padding-top: 15px;
-
-  @media screen and (max-width: 768px) {
-    width: 90%;
-    padding-top: 10px;
-  }
 `
 
 export const Head = () => <SEO />

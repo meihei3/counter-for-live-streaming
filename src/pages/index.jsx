@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
 import { Display } from "../components/Display"
-import { Footer } from "../components/Footer"
-import { Header } from "../components/Header"
 import { countNumberToText, countUp, countDown } from "../util/Counter"
 import { Fonts, selectFont, getDefaultFont } from "../util/FontSelector"
 import { SEO } from "../components/Seo"
+import { Layout } from "../components/Layout"
 
 export default function Home() {
   const [count, setCount] = useState(0)
@@ -28,8 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <Container className="container">
-        <Header />
+      <Layout>
         <Display
           numberText={countNumberToText(count)}
           bgColor={bgColor}
@@ -103,21 +100,9 @@ export default function Home() {
             />
           </div>
         </div>
-        <Footer />
-      </Container>
+      </Layout>
     </>
   )
 }
-
-const Container = styled.div`
-  max-width: 800px;
-  height: 100vh;
-  padding-top: 15px;
-
-  @media screen and (max-width: 768px) {
-    width: 90%;
-    padding-top: 10px;
-  }
-`
 
 export const Head = () => <SEO />
