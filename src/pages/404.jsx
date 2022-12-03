@@ -1,4 +1,5 @@
 import React from "react"
+import { SEO } from "../components/Seo"
 
 export default function NotFound() {
   return (
@@ -8,4 +9,6 @@ export default function NotFound() {
   )
 }
 
-export { Head } from "../components/Head"
+export const Head = () => (
+  <SEO />
+)

@@ -1,10 +1,20 @@
 import React from "react"
 import { Script } from "gatsby"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const Head = () => {
+const SEO = ({ title, description, pathname, children }) => {
+  const { title: defaultTitle, description: defaultDescription, image, siteUrl, keywords } = useSiteMetadata()
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image}`,
+    url: `${siteUrl}${pathname || ``}`,
+    keywords: keywords,
+  }
+
   return (
     <>
-      <title>Counter for live-streaming</title>
+      <title>{seo.title}</title>
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta charset="utf-8" />
       <meta
@@ -14,23 +24,14 @@ const Head = () => {
       <link rel="shortcut icon" href={"/img/favicon.ico"} />
       <link rel="stylesheet" href={"/css/wing.min.css"} />
       <link rel="stylesheet" href={"/css/dist.css?v2.3.0"} />
-      <meta name="keywords" content="カウンター,配信,OBS,クロマキー,透過" />
-      <meta
-        name="description"
-        content="配信者向けのシンプルな手動カウンターWebアプリです。OBSでクロマキーフィルタを使用する事で透過させて使うことが出来ます。"
-      />
-      <meta property="og:title" content="Counter for live-streaming" />
+      <meta name="keywords" content={seo.keywords} />
+      <meta name="description" content={seo.description} />
+      <meta property="og:title" content={seo.title} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://counter-app.meihei.dev/" />
-      <meta
-        property="og:image"
-        content="https://counter-app.meihei.dev/static/img/ogp.png"
-      />
-      <meta property="og:site_name" content="Counter for live-streaming" />
-      <meta
-        property="og:description"
-        content="配信者向けのシンプルな手動カウンターWebアプリです。OBSでクロマキーフィルタを使用する事で透過させて使うことが出来ます。"
-      />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:site_name" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@app1e_s" />
 
@@ -57,8 +58,9 @@ const Head = () => {
           gtag('config', 'G-NGEYCRYTBJ');
         `}
       </Script>
+      {children}
     </>
   )
 }
 
-export { Head }
+export { SEO }

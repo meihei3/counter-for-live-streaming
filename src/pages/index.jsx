@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { countNumberToText, countUp, countDown } from "../util/Counter"
 import { Fonts, selectFont, getDefaultFont } from "../util/FontSelector"
+import { SEO } from "../components/Seo"
 
 export default function Home() {
   const [count, setCount] = useState(0)
@@ -119,4 +120,6 @@ const Container = styled.div`
   }
 `
 
-export { Head } from "../components/Head"
+export const Head = () => (
+  <SEO />
+)

@@ -1,5 +1,6 @@
 import React from "react"
 import { Footer } from "../../components/Footer"
+import { SEO } from "../../components/Seo"
 
 export default function About() {
   return (
@@ -46,4 +47,6 @@ export default function About() {
   )
 }
 
-export { Head } from "../../components/Head"
+export const Head = () => (
+  <SEO />
+)
