@@ -8,8 +8,8 @@ export default function About() {
   return (
     <Container className="container">
       <Header />
-      <div class="site-description background-ligth-gray">
-        <h2 class="site-description__title">About This</h2>
+      <Description className="background-ligth-gray">
+        <DescriptionTitle>About This</DescriptionTitle>
         <p>
           配信者向けのシンプルな手動カウンターWebアプリです。OBSでクロマキーフィルタを使用する事で透過させて使うことが出来ます。
         </p>
@@ -20,7 +20,7 @@ export default function About() {
           </a>
           にて公開されています。
         </p>
-        <h2 class="site-description__title">Privacy Policy</h2>
+        <DescriptionTitle>Privacy Policy</DescriptionTitle>
         <p>
           当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。
           このGoogleアナリティクスはデータの収集のためにCookieを使用しています。
@@ -38,7 +38,7 @@ export default function About() {
           </a>
           ページをご覧ください。
         </p>
-      </div>
+      </Description>
       <Footer />
     </Container>
   )
@@ -53,6 +53,21 @@ const Container = styled.div`
     width: 90%;
     padding-top: 10px;
   }
+`
+
+const Description = styled.div`
+  padding: 10px;
+  width: 100%;
+  color: #363636;
+  background-color: #f4ffe4;
+  margin-bottom: 30px;
+`
+
+const DescriptionTitle = styled.h2`
+  font-weight: 300;
+  font-size: 26px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 `
 
 export const Head = () => (
