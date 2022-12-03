@@ -1,12 +1,13 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const Footer = props => {
   return (
     <StyledFooter className="flex center">
       <p>
-        <a href="/">top</a> | <a href="/about/">about</a> | Copyright © 2022{" "}
-        <a href="https://twitter.com/app1e_s">meihei</a>.
+        <Link to="/">top</Link> | <Link to="/about/">about</Link> | Copyright ©
+        2022 <a href="https://twitter.com/app1e_s">meihei</a>.
       </p>
     </StyledFooter>
   )
