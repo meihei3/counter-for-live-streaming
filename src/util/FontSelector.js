@@ -12,15 +12,15 @@ export const Fonts = [
   { family: "", weight: 400, useDefault: true, value: "default" },
   {
     family: '"Noto Sans JP", sans-serif',
-    weight: 700,
-    useDefault: false,
-    value: "Noto Sans JP Bold",
-  },
-  {
-    family: '"Noto Sans JP", sans-serif',
     weight: 400,
     useDefault: false,
     value: "Noto Sans JP Regular",
+  },
+  {
+    family: '"Noto Sans JP", sans-serif',
+    weight: 700,
+    useDefault: false,
+    value: "Noto Sans JP Bold",
   },
   {
     family: '"Noto Sans JP", sans-serif',
