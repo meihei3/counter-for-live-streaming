@@ -1,16 +1,13 @@
 import React from "react"
+import styled from "styled-components"
+import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { SEO } from "../../components/Seo"
 
 export default function About() {
   return (
-    <div class="container">
-      <div class="header flex center">
-        <h1 class="header__text">
-          Counter For <br class="spbr" />
-          Live-streaming
-        </h1>
-      </div>
+    <Container className="container">
+      <Header />
       <div class="site-description background-ligth-gray">
         <h2 class="site-description__title">About This</h2>
         <p>
@@ -43,9 +40,20 @@ export default function About() {
         </p>
       </div>
       <Footer />
-    </div>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  max-width: 800px;
+  height: 100vh;
+  padding-top: 15px;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    padding-top: 10px;
+  }
+`
 
 export const Head = () => (
   <SEO />
