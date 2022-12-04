@@ -19,7 +19,7 @@ const SEO = ({ title, description, pathname, children }) => {
     keywords: keywords,
     gtag: gtag,
   }
-  const version = "v2.3.0"
+  const version = "v3.0.0" // CSSのキャッシュ削除用。将来的にはCSSinJSに統一する。
 
   return (
     <>
