@@ -30,7 +30,7 @@ const SEO = ({ title, description, pathname, children }) => {
         http-equiv="referrer-policy"
         content="strict-origin-when-cross-origin"
       />
-      <link rel="shortcut icon" href={"/img/favicogn.ico"} />
+      <link rel="shortcut icon" href={"/img/favicon.ico"} />
       <link rel="stylesheet" href={"/css/wing.min.css"} />
       <link rel="stylesheet" href={"/css/dist.css?" + version} />
       <meta name="keywords" content={seo.keywords} />
