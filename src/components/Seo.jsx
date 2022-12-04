@@ -7,7 +7,7 @@ const SEO = ({ title, description, pathname, children }) => {
     title: defaultTitle,
     description: defaultDescription,
     image,
-    url: siteUrl,
+    siteUrl: siteUrl,
     keywords,
     gtag,
   } = useSiteMetadata()
