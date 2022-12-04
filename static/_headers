@@ -3,6 +3,7 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: document-domain=()
   # Content-Security-Policy: default-src 'none'; style-src 'self' fonts.googleapis.com; script-src 'strict-dynamic' 'nonce-NmLwe69hkSjN6cPvylnX_5zKwKkgZLzgy7CR0zAYR0c'; font-src 'self' fonts.googleapis.com fonts.gstatic.com; img-src 'self'; connect-src 'self' *.google-analytics.com;
 
 /img/*
