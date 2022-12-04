@@ -8,7 +8,7 @@ const Layout = props => {
 
   return (
     <Container className={props.className}>
-      {isIncludeHeader ? <Header /> : ''}
+      {isIncludeHeader ? <Header /> : ""}
       {props.children}
       <Footer />
     </Container>
@@ -28,4 +28,4 @@ const Container = styled.div`
   }
 `
 
-export {Layout}
+export { Layout }

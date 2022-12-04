@@ -14,5 +14,24 @@ module.exports = {
     keywords: `カウンター,配信,OBS,クロマキー,透過`,
     gtag: `G-NGEYCRYTBJ`,
   },
-  plugins: [`gatsby-plugin-styled-components`],
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: "/",
+        serialize: (page, { resolvePagePath }) => {
+          let priority = 0.5
+          if (page.path === "/") {
+            priority = 1
+          }
+          return {
+            url: `${resolvePagePath(page)}`,
+            changefreq: `weekly`,
+            priority: priority,
+          }
+        },
+      },
+    },
+  ],
 }
