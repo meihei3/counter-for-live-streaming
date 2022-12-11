@@ -99,6 +99,21 @@ export default function Home() {
               onChange={e => setStroke(e.target.checked)}
             />
           </div>
+          <div class="col border-black options__item">
+            <label for="set-number">Set</label>
+            <input
+              type="number"
+              id="set-number"
+              class="set-number"
+              min="0"
+              max="100000"
+              value={count}
+              onChange={e => setCount(parseInt(e.target.value, 10))}
+            />
+          </div>
+          <div class="col border-black options__item">
+            {/* TBD */}
+          </div>
         </div>
       </Layout>
     </>
