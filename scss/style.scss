@@ -50,3 +50,11 @@ p {
     width: 21px;
     margin-left: 5px;
 }
+
+input[type="number"].set-number {
+    // memo wing.css の優先順位を上回る為のセレクタ
+    margin: 0 0 0 5px;
+    padding: 5px;
+    height: auto;
+    background: #fff;
+}
