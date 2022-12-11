@@ -107,7 +107,7 @@ export default function Home() {
               class="set-number"
               min="0"
               max="100000"
-              value={count !== 0 ? count : ''}
+              value={count}
               onChange={e => setCount(e.target.value !== "" ? parseInt(e.target.value, 10) : 0)}
             />
           </div>
