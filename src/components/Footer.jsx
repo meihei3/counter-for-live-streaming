@@ -6,8 +6,10 @@ const Footer = props => {
   return (
     <StyledFooter className="flex center">
       <p>
-        <Link to="/">Top</Link> | <Link to="/about/">About This</Link> | <Link to="/privacy-policy/">Privacy Policy</Link> | <Link to="/terms-of-service/">Terms of Service</Link> | Copyright ©
-        2022 <a href="https://twitter.com/app1e_s">meihei</a>.
+        <Link to="/">Top</Link> | <Link to="/about/">About This</Link> |{" "}
+        <Link to="/privacy-policy/">Privacy Policy</Link> |{" "}
+        <Link to="/terms-of-service/">Terms of Service</Link> | Copyright © 2022{" "}
+        <a href="https://twitter.com/app1e_s">meihei</a>.
       </p>
     </StyledFooter>
   )

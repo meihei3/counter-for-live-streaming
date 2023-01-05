@@ -13,9 +13,7 @@ export default function About() {
         </p>
         <p>
           個人、法人、商用、非商用問わず無料でご利用頂けます。是非、配信でご活用ください。詳細は
-          <a href="/terms-of-service/">
-            利用規約
-          </a>
+          <a href="/terms-of-service/">利用規約</a>
           に記載しています。
         </p>
         <p>
@@ -26,7 +24,7 @@ export default function About() {
           にて公開されています。
         </p>
         <p>
-        ご利用いただいた際には、本サービスを利用したことがわかるクレジット表記とリンクを記載して頂けると嬉しいです。
+          ご利用いただいた際には、本サービスを利用したことがわかるクレジット表記とリンクを記載して頂けると嬉しいです。
         </p>
       </Description>
     </Layout>

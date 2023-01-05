@@ -108,12 +108,14 @@ export default function Home() {
               min="0"
               max="100000"
               value={count}
-              onChange={e => setCount(e.target.value !== "" ? parseInt(e.target.value, 10) : 0)}
+              onChange={e =>
+                setCount(
+                  e.target.value !== "" ? parseInt(e.target.value, 10) : 0
+                )
+              }
             />
           </div>
-          <div class="col border-black options__item">
-            {/* TBD */}
-          </div>
+          <div class="col border-black options__item">{/* TBD */}</div>
         </div>
       </Layout>
     </>
