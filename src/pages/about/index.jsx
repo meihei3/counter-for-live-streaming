@@ -24,18 +24,12 @@ export default function About() {
 }
 
 const Description = styled.div`
-  padding: 10px;
   width: 100%;
   color: #363636;
-  background-color: #f4ffe4;
-  margin-bottom: 30px;
 `
 
 const DescriptionTitle = styled.h2`
   font-weight: 300;
-  font-size: 26px;
-  margin-top: 10px;
-  margin-bottom: 5px;
 `
 
 export const Head = () => <SEO />
