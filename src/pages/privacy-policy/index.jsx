@@ -39,4 +39,4 @@ const DescriptionTitle = styled.h2`
   font-weight: 300;
 `
 
-export const Head = () => <SEO />
+export const Head = () => <SEO title="Privacy Policy" />

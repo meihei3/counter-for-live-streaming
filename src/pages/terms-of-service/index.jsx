@@ -52,4 +52,4 @@ const ListItem = styled.li`
   margin-bottom: 0;
 `
 
-export const Head = () => <SEO />
+export const Head = () => <SEO title="Terms of Service" />
