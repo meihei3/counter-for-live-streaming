@@ -16,11 +16,13 @@ const Layout = props => {
 }
 
 const Container = styled.div`
+  position: relative;
   max-width: 800px;
+  min-height: 100vh;
+  padding: 15px 0 60px;
   width: 80%;
-  height: 100vh;
-  padding-top: 15px;
   margin: 0 auto;
+  box-sizing: border-box;
 
   @media screen and (max-width: 768px) {
     width: 90%;
