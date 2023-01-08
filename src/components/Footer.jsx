@@ -18,7 +18,7 @@ const Footer = props => {
 const StyledFooter = styled.footer`
   position: absolute;
   left: 0;
-  bottom: 5px;
+  bottom: 10px;
   width: 100%;
 `
 
