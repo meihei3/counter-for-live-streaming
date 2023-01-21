@@ -9,17 +9,20 @@ const Layout = props => {
   return (
     <Container className={props.className}>
       {isIncludeHeader ? <Header /> : ""}
-      {props.children}
+      <Main>
+        {props.children}
+      </Main>
       <Footer />
     </Container>
   )
 }
 
 const Container = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
   max-width: 800px;
   min-height: 100vh;
-  padding: 15px 0 60px;
+  padding: 0;
   width: 80%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -28,6 +31,10 @@ const Container = styled.div`
     width: 90%;
     padding-top: 10px;
   }
+`
+
+const Main = styled.main`
+  flex: 1;
 `
 
 export { Layout }

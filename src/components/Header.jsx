@@ -12,10 +12,10 @@ const Header = props => {
 }
 
 const StyledHeader = styled.header`
-  margin: 0 0 50px;
+  margin: 15px 0 50px;
 
   @media screen and (max-width: 768px) {
-    margin: 0 0 20px;
+    margin: 15px 0 20px;
   }
 `
 
